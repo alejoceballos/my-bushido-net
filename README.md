@@ -2,12 +2,13 @@
 
 A Study Guide to Many Java and Microservices Related Technologies
 
+
 ## Docker
 
 - Docker Compose
-
 - Images:
     - PostgreSQL (with volume path)
+
 
 ## Postgres
 
@@ -15,16 +16,15 @@ A Study Guide to Many Java and Microservices Related Technologies
     - CREATE TABLE
     - ALTER TABLE
     - CREATE SEQUENCE ... OWNED BY
-
 - DML:
     - SELECT
     - INSERT
     - UPDATE
-
 - Data types:
     - UUID
     - SERIAL vs. sequences (SERIAL implicitly creates a default sequence named <table>_<column>_seq)
     - BYTEA (for images)
+
 
 ## Java
 
@@ -45,44 +45,40 @@ A Study Guide to Many Java and Microservices Related Technologies
 - 15:
     - Text Blocks
 
+
 ### testing
 
 - JUnit Jupiter
     - @Test
     - @BeforeAll, @BeforeEach, @AfterAll, @AfterEach
-
 - Mockito
     - @Mock / @MockBean
     - reset, when, ...
-
 - Hamcrest (assertThat, equalTo, ...)
+
 
 ### JDBC
 
 - java.sql.Date
-
 - Statement:
     - execute & executeQuery
     - ResultSet in loop
-
 - PreparedStatement:
     - Add images (setBinaryStream)
     - Batch updates (addBatch, executeBatch)
     - execute vs. executeUpdate
 
+
 ### Spring
 
 - ResourceUtils:
     - Read file
-
 - Basic dependency injection:
     - @Service, @Component, @Autowired
     - ApplicationContext & implements ApplicationContextAware
-
 - Security
     - SecurityContextHolder
     - UserDetails
-
 - Spring Boot
     - @SpringBootApplication, @Configuration
     - Spring Boot Test
@@ -104,24 +100,25 @@ A Study Guide to Many Java and Microservices Related Technologies
         - Basic Authentication
     - Spring Boot Actuator
 
+
 ### Apache Commons
 
 - Codec:
     - Encode Base64 string to embed in a JSON file
 
+
 ### Lombok
 
 - Constructors: @RequiredArgsConstructor, @NoArgsConstructor, @AllArgsConstructor
-
 - Accessors & Equality: @Data
-
 - Builder design pattern: @Builder
+
 
 ### Mapstruct
 
 - @Mapper (with Spring ComponentModel)
-
 - @Mapping (child objects, date format, implicit casting)
+
 
 ### Jackson
 
@@ -135,20 +132,16 @@ A Study Guide to Many Java and Microservices Related Technologies
     - Lazy loading
     - Image mapping (byte array)
     - Date mapping (@Temporal)
-
 - Validators: @NotBlank, @Valid
-
 - Transactions: @Transactional
+
 
 ### Hibernate
 
 - Auto generate UUID
     - @UuidGenerator
-
 - LazyInitializationException
-
 - Dialect: PostgreSQLDialect
-
 - Envers:
     - Create data structures (PostgreSQL)
         - Create revision table & sequence
@@ -157,6 +150,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 - Revision Entity & Listener
     - extends DefaultRevisionEntity
     - implements RevisionListener
+
 
 ### Flyway
 
