@@ -75,23 +75,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 - Images:
     - PostgreSQL (with volume path)
 
-#### Postgres
-
-- DDL:
-    - CREATE TABLE
-    - ALTER TABLE
-    - CREATE SEQUENCE ... OWNED BY
-- DML:
-    - SELECT (IN, LIKE, INNER JOIN, ...)
-    - INSERT
-    - UPDATE
-    - DELETE
-- Data types:
-    - UUID
-    - SERIAL vs. sequences (SERIAL implicitly creates a default sequence named <table>_<column>_seq)
-    - BYTEA (for images)
-
-#### Java
+### Java
 
 - 1:
     - FileInputStream
@@ -110,7 +94,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 - 15:
     - Text Blocks
 
-#### Testing
+### Testing
 
 - JUnit Jupiter
     - @Test
@@ -120,7 +104,7 @@ A Study Guide to Many Java and Microservices Related Technologies
     - reset, when, ...
 - Hamcrest (assertThat, equalTo, ...)
 
-#### JDBC
+### JDBC
 
 - java.sql.Date
 - Statement:
@@ -131,7 +115,7 @@ A Study Guide to Many Java and Microservices Related Technologies
     - Batch updates (addBatch, executeBatch)
     - execute vs. executeUpdate
 
-#### Spring
+### Spring
 
 - ResourceUtils:
     - Read file
@@ -162,28 +146,28 @@ A Study Guide to Many Java and Microservices Related Technologies
         - Basic Authentication
     - Spring Boot Actuator
 
-#### Apache Commons
+### Apache Commons
 
 - Codec:
     - Encode Base64 string to embed in a JSON file
 
-#### Lombok
+### Lombok
 
 - Constructors: @RequiredArgsConstructor, @NoArgsConstructor, @AllArgsConstructor
 - Accessors & Equality: @Data
 - Builder design pattern: @Builder
 
-#### Mapstruct
+### Mapstruct
 
 - @Mapper (with Spring ComponentModel)
 - @Mapping (child objects, date format, implicit casting)
 
-#### Jackson
+### Jackson
 
 - Exclude null attributes:
     - @JsonInclude(JsonInclude.Include.NON_NULL)
 
-#### Jakarta JPA
+### Jakarta JPA
 
 - ORM
     - @Entity, @Id, @GeneratedValue, @UuidGenerator, @Embedded
@@ -197,7 +181,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 - Validators: @NotBlank, @NotNull, @Valid
 - Transactions: @Transactional
 
-#### Hibernate
+### Hibernate
 
 - Auto generate UUID
     - @UuidGenerator
@@ -207,20 +191,35 @@ A Study Guide to Many Java and Microservices Related Technologies
     - @Audited
     - Create data structures (PostgreSQL)
         - Create revision table & sequence
-        - Create audit tables named <table>_aud
-        - Create sequences named <table>_seq
+        - Create audit tables named tablename_aud
+        - Create sequences named tablename_seq
 - Revision Entity & Listener
     - extends DefaultRevisionEntity
     - implements RevisionListener
 
-#### Flyway
+### Flyway
 
 - Java migrations
 
-#### Maven
+### Maven
 
-#### UML
+### UML
 
 - Use Case Diagram
 - Class Diagram
-- 
+
+### Postgres
+
+- DDL:
+    - CREATE TABLE
+    - ALTER TABLE
+    - CREATE SEQUENCE ... OWNED BY
+- DML:
+    - SELECT (IN, LIKE, INNER JOIN, ...)
+    - INSERT
+    - UPDATE
+    - DELETE
+- Data types:
+    - UUID
+    - SERIAL vs. sequences (SERIAL implicitly creates a default sequence named <table>_<column>_seq)
+    - BYTEA (for images)
