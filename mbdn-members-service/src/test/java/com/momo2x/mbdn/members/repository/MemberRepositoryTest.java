@@ -4,6 +4,7 @@ import com.momo2x.mbdn.members.model.Member;
 import com.momo2x.mbdn.members.model.MemberAvatar;
 import com.momo2x.mbdn.members.model.MemberContact;
 import com.momo2x.mbdn.members.security.MemberUserDetailsService;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -107,6 +108,7 @@ class MemberRepositoryTest {
     }
 
     @BeforeEach
+    @AfterEach
     void deleteTestData() {
         var avatarRevs = deleteAndGetRevs(
                 TEST_AVATAR_DESC,

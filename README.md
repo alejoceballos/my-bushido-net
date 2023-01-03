@@ -98,7 +98,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 
 - JUnit Jupiter
     - @Test
-    - @BeforeAll, @BeforeEach, @AfterAll, @AfterEach
+    - @BeforeAll, @BeforeEach, @AfterEach
 - Mockito
     - @Mock / @MockBean
     - reset, when, ...
