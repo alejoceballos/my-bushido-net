@@ -25,9 +25,9 @@ public class V1_0_1__Initial_member_data extends BaseJavaMigration {
             final var image = ResourceUtils.getFile(AVATAR_FILE);
 
             try (final var inputStream = new FileInputStream(image)) {
-                statement.setBinaryStream(3, inputStream, (int) image.length());
                 statement.setObject(1, ADMIN_ID);
                 statement.setString(2, ADMIN_NICKNAME);
+                statement.setBinaryStream(3, inputStream, (int) image.length());
                 statement.setObject(4, ADMIN_ID);
                 statement.setString(5, ADMIN_NAME);
                 statement.setDate(6, new java.sql.Date(ADMIN_BIRTH_DATE.getTime()));

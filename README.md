@@ -2,31 +2,96 @@
 
 A Study Guide to Many Java and Microservices Related Technologies
 
+## What is expected to work with (for now):
 
-## Docker
+- Java:
+    - Core:
+        - Lambda functions & Functional Interfaces
+        - Streams API
+        - Default static methods on interfaces
+        - Optional
+        - Everything else from 8 to 19!
+    - Spring:
+        - Boot:
+            - Active-MQ
+            - Mockito
+            - Cache
+            - Test
+            - Web
+            - Actuator
+            - Data JPA
+            - Validation
+        - Cache
+        - JMS
+        - HTTP
+        - KAFKA
+        - Lots of other features!
+    - Testing:
+        - Mockito:
+            - Mock
+            - Spy
+            - Captor
+        - Awaitility
+        - Wiremock
+        - Cucumber:
+            - JSON Path
+        - JUnit 5
+        - Pitest Mutations
+        - Hamcrest
+        - Logback Events
+    - Other Libraries:
+        - Lombok:
+            - Data
+            - Builder
+            - SLF4J
+        - Map Struct
+        - Guava Event Bus
+        - Jackson Object Mapping
+        - SLF4J
+- Infra:
+    - Docker
+        - Docker Compose
+    - Kafka
+    - GraphQL
+    - IBM MQ
+    - Swagger (Stalled because is not compatible with Spring Boot's last version)
+    - Microservices
+        - Kubernetes
+    - EhCache
+- Others:
+    - Jira
+    - Jenkins
+    - Git
+    - GitHub / GitLab
+    - Kibana
+    - SonarQube
+    - UML
+
+## What have been done (so far):
+
+### Docker
 
 - Docker Compose
 - Images:
     - PostgreSQL (with volume path)
 
-
-## Postgres
+#### Postgres
 
 - DDL:
     - CREATE TABLE
     - ALTER TABLE
     - CREATE SEQUENCE ... OWNED BY
 - DML:
-    - SELECT
+    - SELECT (IN, LIKE, INNER JOIN, ...)
     - INSERT
     - UPDATE
+    - DELETE
 - Data types:
     - UUID
     - SERIAL vs. sequences (SERIAL implicitly creates a default sequence named <table>_<column>_seq)
     - BYTEA (for images)
 
-
-## Java
+#### Java
 
 - 1:
     - FileInputStream
@@ -36,7 +101,7 @@ A Study Guide to Many Java and Microservices Related Technologies
     - try-with-resources
 - 8:
     - Optional
-    - Streams (map, sorted, collect, ...)
+    - Streams (map, sorted, concat, distinct, collect, toList, ...)
 - 10:
     - Type inference of local variables with initializers (var keyword)
 - 14:
@@ -45,8 +110,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 - 15:
     - Text Blocks
 
-
-### testing
+#### Testing
 
 - JUnit Jupiter
     - @Test
@@ -56,8 +120,7 @@ A Study Guide to Many Java and Microservices Related Technologies
     - reset, when, ...
 - Hamcrest (assertThat, equalTo, ...)
 
-
-### JDBC
+#### JDBC
 
 - java.sql.Date
 - Statement:
@@ -68,8 +131,7 @@ A Study Guide to Many Java and Microservices Related Technologies
     - Batch updates (addBatch, executeBatch)
     - execute vs. executeUpdate
 
-
-### Spring
+#### Spring
 
 - ResourceUtils:
     - Read file
@@ -100,49 +162,49 @@ A Study Guide to Many Java and Microservices Related Technologies
         - Basic Authentication
     - Spring Boot Actuator
 
-
-### Apache Commons
+#### Apache Commons
 
 - Codec:
     - Encode Base64 string to embed in a JSON file
 
-
-### Lombok
+#### Lombok
 
 - Constructors: @RequiredArgsConstructor, @NoArgsConstructor, @AllArgsConstructor
 - Accessors & Equality: @Data
 - Builder design pattern: @Builder
 
-
-### Mapstruct
+#### Mapstruct
 
 - @Mapper (with Spring ComponentModel)
 - @Mapping (child objects, date format, implicit casting)
 
-
-### Jackson
+#### Jackson
 
 - Exclude null attributes:
     - @JsonInclude(JsonInclude.Include.NON_NULL)
 
-### Jakarta JPA
+#### Jakarta JPA
 
 - ORM
-    - @Entity, @Id, @GeneratedValue, @Column, @ManyToOne, @Embedded
-    - Lazy loading
+    - @Entity, @Id, @GeneratedValue, @UuidGenerator, @Embedded
+    - @Column:
+        - length, nullable
+    - @ManyToOne:
+        - Lazy loading fetch
+        - Cascade Type (PERSIST, MERGE)
     - Image mapping (byte array)
     - Date mapping (@Temporal)
-- Validators: @NotBlank, @Valid
+- Validators: @NotBlank, @NotNull, @Valid
 - Transactions: @Transactional
 
-
-### Hibernate
+#### Hibernate
 
 - Auto generate UUID
     - @UuidGenerator
 - LazyInitializationException
 - Dialect: PostgreSQLDialect
 - Envers:
+    - @Audited
     - Create data structures (PostgreSQL)
         - Create revision table & sequence
         - Create audit tables named <table>_aud
@@ -151,7 +213,14 @@ A Study Guide to Many Java and Microservices Related Technologies
     - extends DefaultRevisionEntity
     - implements RevisionListener
 
-
-### Flyway
+#### Flyway
 
 - Java migrations
+
+#### Maven
+
+#### UML
+
+- Use Case Diagram
+- Class Diagram
+- 

@@ -28,7 +28,7 @@ public class Member {
     @NotBlank(message = "nickname is mandatory")
     private String nickname;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private MemberAvatar avatar;
 
     @Embedded
