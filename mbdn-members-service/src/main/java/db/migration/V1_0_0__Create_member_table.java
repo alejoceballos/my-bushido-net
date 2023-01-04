@@ -3,6 +3,11 @@ package db.migration;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
+/**
+ * Create main module table and its audit table first version. The audit table must reference the revision table.
+ *
+ * This table stores images in BYTEA column.
+ */
 public class V1_0_0__Create_member_table extends BaseJavaMigration {
 
     private static final String DDL_MEMBER_STMT = """
@@ -33,7 +38,7 @@ public class V1_0_0__Create_member_table extends BaseJavaMigration {
             , email          VARCHAR(320)
             , birth_date     DATE
             , CONSTRAINT member_aud_pk PRIMARY KEY (id, rev)
-            , CONSTRAINT member_aud_rev_fk FOREIGN KEY (rev) 
+            , CONSTRAINT member_aud_rev_fk FOREIGN KEY (rev)
                 REFERENCES audit_revision_info(id))
             """;
 

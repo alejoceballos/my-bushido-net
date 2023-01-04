@@ -3,6 +3,9 @@ package db.migration;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
+/**
+ * Database normalization. Create table only responsible for holding images. Audit table also created.
+ */
 public class V1_1_0__Create_avatar_table extends BaseJavaMigration {
 
     private static final String DDL_AVATAR_STMT = """

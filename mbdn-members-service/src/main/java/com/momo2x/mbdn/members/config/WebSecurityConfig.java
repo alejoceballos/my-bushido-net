@@ -14,14 +14,20 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
+/**
+ * Security configuration to impose (for now) basic user/password authentication. The idea is that in the future it is
+ * replaced by OAuth or something else.
+ * <p>
+ * Note that any public or actuator requests are not secured.
+ */
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class WebSecurityConfig {
 
-    private final MemberAuthenticationEntryPoint authenticationEntryPoint;
-
     private static final BCryptPasswordEncoder ENCODER = new BCryptPasswordEncoder(8);
+
+    private final MemberAuthenticationEntryPoint authenticationEntryPoint;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

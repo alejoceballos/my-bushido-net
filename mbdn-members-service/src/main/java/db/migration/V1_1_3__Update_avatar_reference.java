@@ -3,6 +3,9 @@ package db.migration;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
+/**
+ * Update references to the new table
+ */
 public class V1_1_3__Update_avatar_reference extends BaseJavaMigration {
 
     private static final String DML_MEMBER_UPDATE = """

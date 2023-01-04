@@ -3,6 +3,13 @@ package db.migration;
 import org.flywaydb.core.api.migration.BaseJavaMigration;
 import org.flywaydb.core.api.migration.Context;
 
+/**
+ * Revision table and sequence based on the {@link com.momo2x.mbdn.members.audit.AuditRevisionInfo} created using Flyway
+ * migration.
+ * <p>
+ * Note that audit sequences MUST have the "INCREMENT BY 50" because it is demanded by the migration framework (didn't
+ * take time to check how to change this configuration).
+ */
 public class V0_0_0__Create_audit_rev_info_table extends BaseJavaMigration {
 
     private static final String DDL_AUDIT_REVISION_INFO_STMT = """

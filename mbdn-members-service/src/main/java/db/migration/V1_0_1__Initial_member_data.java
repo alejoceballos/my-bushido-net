@@ -12,6 +12,12 @@ import static com.momo2x.mbdn.members.constant.DefaultValueConstants.ADMIN_NAME;
 import static com.momo2x.mbdn.members.constant.DefaultValueConstants.ADMIN_NICKNAME;
 import static com.momo2x.mbdn.members.constant.DefaultValueConstants.AVATAR_FILE;
 
+/**
+ * Insert data into the main module table using plain JDBC. No data was added to the audit table and its automation only
+ * works under Hibernate/JPA context.
+ * <p>
+ * Loading the image is dependent on Spring's utility class.
+ */
 public class V1_0_1__Initial_member_data extends BaseJavaMigration {
 
     private static final String DML_STMT = """

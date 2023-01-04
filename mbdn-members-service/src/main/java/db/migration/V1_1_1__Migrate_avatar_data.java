@@ -8,6 +8,9 @@ import java.util.UUID;
 import static com.momo2x.mbdn.members.constant.DefaultValueConstants.ADMIN_ID;
 import static com.momo2x.mbdn.members.constant.DefaultValueConstants.AVATAR_DESCRIPTION;
 
+/**
+ * Migrate data from already inserted data to the new image holding table.
+ */
 public class V1_1_1__Migrate_avatar_data extends BaseJavaMigration {
 
     private static final String DML_SELECT_MEMBER = """

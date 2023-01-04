@@ -21,6 +21,9 @@
         <spring.version>3.0.1</spring.version>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
         <lombok.version>1.18.24</lombok.version>
+        <commonscodec.version>1.15</commonscodec.version>
+        <hamcrest.version>2.2</hamcrest.version>
+        <hibernate.version>6.1.5.Final</hibernate.version>
     </properties>
 
     <dependencies>
@@ -108,20 +111,20 @@
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-core</artifactId>
-            <version>2.2</version>
+            <version>${hamcrest.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.15</version>
+            <version>${commonscodec.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-envers</artifactId>
-            <version>6.1.5.Final</version>
+            <version>${hibernate.version}</version>
         </dependency>
 
     </dependencies>
