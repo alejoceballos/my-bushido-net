@@ -86,6 +86,8 @@ A Study Guide to Many Java and Microservices Related Technologies
 - 8:
     - Optional
     - Streams (map, sorted, concat, distinct, collect, toList, ...)
+- 9:
+    - Map.ofd
 - 10:
     - Type inference of local variables with initializers (var keyword)
 - 14:
@@ -120,11 +122,20 @@ A Study Guide to Many Java and Microservices Related Technologies
 - ResourceUtils:
     - Read file
 - Basic dependency injection:
-    - @Service, @Component, @Autowired
+    - @Controller, @Service, @Component, @Autowired, @Value
     - ApplicationContext & implements ApplicationContextAware
+    - FactoryBean
+    - InitializingBean & afterPropertiesSet
 - Security
     - SecurityContextHolder
     - UserDetails
+- Http:
+    - HttpHeaders (basic authentication)
+    - HttpEntity
+    - HttpMethod
+    - HttpComponentsClientHttpRequestFactory
+- Spring Web MVC:
+    - RestTemplate
 - Spring Boot
     - @SpringBootApplication, @Configuration
     - Spring Boot Test
@@ -145,6 +156,8 @@ A Study Guide to Many Java and Microservices Related Technologies
     - Spring Boot Security:
         - Basic Authentication
     - Spring Boot Actuator
+    - Spring Boot GraphQL:
+        - @QueryMapping, @SchemaMapping, @Argument
 
 ### Apache Commons
 
@@ -154,7 +167,7 @@ A Study Guide to Many Java and Microservices Related Technologies
 ### Lombok
 
 - Constructors: @RequiredArgsConstructor, @NoArgsConstructor, @AllArgsConstructor
-- Accessors & Equality: @Data
+- Accessors & Equality: @Data, @Getter
 - Builder design pattern: @Builder
 
 ### Mapstruct
@@ -202,6 +215,15 @@ A Study Guide to Many Java and Microservices Related Technologies
 - Java migrations
 
 ### Maven
+
+- Global properties
+- scope: runtime, test
+- optional (dependency)
+- Plugins
+    - spring-boot-maven-plugin
+    - flyway-maven-plugin
+    - maven-compiler-plugin (Apache)
+    - maven-compiler-plugin & annotationProcessorPaths / compilerArgs (Apache)
 
 ### UML
 

@@ -1,0 +1,19 @@
+type Query {
+    memberById(id: ID): Member
+}
+
+type Member {
+    id: ID
+    nickname: String
+    name: String
+    phone: String
+    address: String
+    email: String
+    birthDate: String
+    avatar: Avatar
+}
+
+type Avatar {
+    id: ID
+    image: String
+}
