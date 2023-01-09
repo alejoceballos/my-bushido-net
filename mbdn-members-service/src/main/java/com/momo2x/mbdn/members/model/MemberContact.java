@@ -3,8 +3,6 @@ package com.momo2x.mbdn.members.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +10,8 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.UUID;
+
+import static jakarta.persistence.TemporalType.DATE;
 
 @Data
 @Builder
@@ -36,7 +36,7 @@ public class MemberContact {
     private String email;
 
     @Column(name = "birth_date")
-    @Temporal(TemporalType.DATE)
+    @Temporal(DATE)
     private Date birthDate;
 
 }

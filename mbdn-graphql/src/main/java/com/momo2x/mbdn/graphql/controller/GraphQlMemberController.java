@@ -49,6 +49,7 @@ public class GraphQlMemberController {
 
     @SchemaMapping(typeName = "Member", field = "avatar")
     public AvatarType avatar(final MemberType member) {
+
         var responseEntity = getRestTemplate().exchange(
                 getProperties().url(getProperties().getGetAvatarByMemberIdEntryPoint(member.id())),
                 HttpMethod.GET,
