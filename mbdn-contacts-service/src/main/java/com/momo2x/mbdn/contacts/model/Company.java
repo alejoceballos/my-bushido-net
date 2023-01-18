@@ -22,4 +22,3 @@ public class Company extends Contact {
     private String tradingName;
 
 }
-

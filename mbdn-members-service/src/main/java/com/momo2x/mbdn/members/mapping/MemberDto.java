@@ -18,6 +18,7 @@ public record MemberDto(
         String phone,
         String address,
         String email,
-        String birthDate
+        String birthDate,
+        String contactRef
 ) {
 }

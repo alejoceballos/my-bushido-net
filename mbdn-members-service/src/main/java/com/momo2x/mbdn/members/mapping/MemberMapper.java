@@ -16,7 +16,7 @@ import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 @Mapper(componentModel = SPRING)
 public interface MemberMapper {
 
-    @Mapping(target = "contactRefId", source = "contact.refId")
+    @Mapping(target = "contactRef", source = "contact.refId")
     @Mapping(target = "name", source = "contact.name")
     @Mapping(target = "phone", source = "contact.phone")
     @Mapping(target = "address", source = "contact.address")

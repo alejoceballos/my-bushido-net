@@ -38,7 +38,7 @@ class MemberControllerAppIntegrationTest {
                 {
                     "id": "%s",
                     "nickname": "%s",
-                    "contactRefId": "%s",
+                    "contactRef": "%s",
                     "name": "%s",
                     "birthDate": "%s"
                 }

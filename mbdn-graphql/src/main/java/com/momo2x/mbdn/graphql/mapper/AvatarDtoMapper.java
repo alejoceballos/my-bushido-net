@@ -1,5 +1,7 @@
-package com.momo2x.mbdn.graphql.model.member;
+package com.momo2x.mbdn.graphql.mapper;
 
+import com.momo2x.mbdn.graphql.client.dto.AvatarDto;
+import com.momo2x.mbdn.graphql.schema.AvatarType;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 

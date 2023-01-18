@@ -1,6 +1,7 @@
-package com.momo2x.mbdn.graphql.http;
+package com.momo2x.mbdn.graphql.client.http;
 
-import com.momo2x.mbdn.graphql.config.EndpointProperties;
+import com.momo2x.mbdn.graphql.client.config.RemoteServiceType;
+import com.momo2x.mbdn.graphql.client.config.ServiceEndpointPropertiesMap;
 import lombok.RequiredArgsConstructor;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.FactoryBean;
@@ -8,21 +9,21 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Map;
 
-import static com.momo2x.mbdn.graphql.http.ServiceEndpointType.MEMBERS;
 import static java.nio.charset.StandardCharsets.US_ASCII;
 
 @Component
 @RequiredArgsConstructor
-public class HttpHeadersFactory implements FactoryBean<Map<ServiceEndpointType, HttpHeaders>>, InitializingBean {
+public class HttpHeadersFactory implements FactoryBean<Map<RemoteServiceType, HttpHeaders>>, InitializingBean {
 
-    private final EndpointProperties properties;
+    private final ServiceEndpointPropertiesMap propertiesMap;
 
-    private Map<ServiceEndpointType, HttpHeaders> httpHeadersMap;
+    private Map<RemoteServiceType, HttpHeaders> httpHeadersMap;
 
     @Override
-    public Map<ServiceEndpointType, HttpHeaders> getObject() throws Exception {
+    public Map<RemoteServiceType, HttpHeaders> getObject() {
         return httpHeadersMap;
     }
 
@@ -38,11 +39,15 @@ public class HttpHeadersFactory implements FactoryBean<Map<ServiceEndpointType, 
 
     @Override
     public void afterPropertiesSet() {
-        httpHeadersMap = Map.of(
-                MEMBERS,
-                createHeaders(
-                        properties.getMembers().getUsername(),
-                        properties.getMembers().getPassword()));
+        httpHeadersMap = new HashMap<>();
+
+        for (RemoteServiceType type : RemoteServiceType.values()) {
+            httpHeadersMap.put(
+                    type,
+                    createHeaders(
+                            propertiesMap.getProperties(type).getUsername(),
+                            propertiesMap.getProperties(type).getPassword()));
+        }
     }
 
     private static HttpHeaders createHeaders(final String username, final String password) {
@@ -55,6 +60,5 @@ public class HttpHeadersFactory implements FactoryBean<Map<ServiceEndpointType, 
 
         return httpHeaders;
     }
-
 
 }

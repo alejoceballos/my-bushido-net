@@ -1,6 +1,7 @@
-package com.momo2x.mbdn.graphql.model.member;
+package com.momo2x.mbdn.graphql.client.dto;
 
-public record MemberType(
+public record MemberDto(
+
         String id,
         String nickname,
         String name,
@@ -8,6 +9,7 @@ public record MemberType(
         String address,
         String email,
         String birthDate,
-        String avatarId
+        String contactRef
+
 ) {
 }

@@ -1,19 +1,61 @@
-type Query {
-    memberById(id: ID): Member
-}
-
 type Member {
     id: ID
     nickname: String
+    contactSummary: MemberContact
+    contactDetailed: Contact
+    avatar: Avatar
+}
+
+type MemberContact {
     name: String
     phone: String
     address: String
     email: String
     birthDate: String
-    avatar: Avatar
+}
+
+type Contact {
+    id: ID
+    firstName: String
+    middleName: String
+    lastName: String
+    email: String
+    birthDate: String
+    referenceContact: String
+    street: String
+    number: String
+    complement: String
+    city: String
+    country: String
+    zipCode: String
+    photo: String
 }
 
 type Avatar {
     id: ID
     image: String
+}
+
+type Query {
+    memberById(id: ID!): Member
+}
+
+type Mutation {
+    createMember(
+        nickname: String
+        firstName: String
+        middleName: String
+        lastName: String
+        email: String
+        birthDate: String
+        referenceContact: String
+        street: String
+        number: String
+        complement: String
+        city: String
+        country: String
+        zipCode: String
+        photo: String
+        avatar: String
+    ): Member!
 }

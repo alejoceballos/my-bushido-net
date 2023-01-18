@@ -64,6 +64,7 @@ class MemberControllerWebLayerIntegrationTest {
                                 DUMMY_STR,
                                 DUMMY_STR,
                                 DUMMY_STR,
+                                DUMMY_STR,
                                 DUMMY_STR));
 
         when(avatarMapper.toAvatarDto(any()))
