@@ -14,20 +14,6 @@ services:
     networks:
       - mbdn-network
 
-  mbdn-members-db-test:
-    image: postgres
-    container_name: mbdn-members-db-test
-    restart: always
-    environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: membersdb
-    ports:
-      - 5433:5432
-    volumes:
-      - mbdn-members-db-test-data:/var/lib/postgresql/data
-    networks:
-      - mbdn-network
-
   mbdn-contacts-db:
     image: postgres
     container_name: mbdn-contacts-db
@@ -42,29 +28,30 @@ services:
     networks:
       - mbdn-network
 
-  mbdn-contacts-db-test:
-    image: postgres
-    container_name: mbdn-contacts-db-test
+  mbdn-ibm-mq:
+    image: icr.io/ibm-messaging/mq:latest
+    container_name: mbdn-ibm-mq
     restart: always
     environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: contactsdb
+      LICENSE: accept
+      MQ_QMGR_NAME: MBDN_QM
+      MQ_APP_PASSWORD: passw0rd
     ports:
-      - 5435:5432
+      - 1414:1414
+      - 9443:9443
     volumes:
-      - mbdn-contacts-db-test-data:/var/lib/postgresql/data
+      - mbdn-ibm-mq-data:/mnt/mqm
+      - ./docker-resources/mbdn-ibm-mq:/temp
     networks:
       - mbdn-network
 
 volumes:
   mbdn-members-db-data:
     name: mbdn-members-db-data
-  mbdn-members-db-test-data:
-    name: mbdn-members-db-test-data
   mbdn-contacts-db-data:
     name: mbdn-contacts-db-data
-  mbdn-contacts-db-test-data:
-    name: mbdn-contacts-db-test-data
+  mbdn-ibm-mq-data:
+    name: mbdn-ibm-mq-data
 
 networks:
   mbdn-network:

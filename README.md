@@ -245,3 +245,13 @@ A Study Guide to Many Java and Microservices Related Technologies
     - UUID
     - SERIAL vs. sequences (SERIAL implicitly creates a default sequence named <table>_<column>_seq)
     - BYTEA (for images)
+
+### GraphQL
+
+- Schema
+    - Type, Input, Nested types, Nested inputs
+    - Query, Mutation
+
+### IBM MQ
+
+- Docker container

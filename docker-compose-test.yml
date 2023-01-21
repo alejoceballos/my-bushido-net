@@ -1,0 +1,39 @@
+services:
+
+  mbdn-members-db-test:
+    image: postgres
+    container_name: mbdn-members-db-test
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: membersdb
+    ports:
+      - 5433:5432
+    volumes:
+      - mbdn-members-db-test-data:/var/lib/postgresql/data
+    networks:
+      - mbdn-test-network
+
+  mbdn-contacts-db-test:
+    image: postgres
+    container_name: mbdn-contacts-db-test
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: passwordls
+      POSTGRES_DB: contactsdb
+    ports:
+      - 5435:5432
+    volumes:
+      - mbdn-contacts-db-test-data:/var/lib/postgresql/data
+    networks:
+      - mbdn-test-network
+
+volumes:
+  mbdn-members-db-test-data:
+    name: mbdn-members-db-test-data
+  mbdn-contacts-db-test-data:
+    name: mbdn-contacts-db-test-data
+
+networks:
+  mbdn-test-network:
+    name: mbdn-test-network

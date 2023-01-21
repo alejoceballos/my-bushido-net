@@ -43,6 +43,7 @@ type Query {
 type Mutation {
     createMember(
         nickname: String
+        avatar: String
         firstName: String
         middleName: String
         lastName: String
@@ -51,11 +52,11 @@ type Mutation {
         referenceContact: String
         street: String
         number: String
-        complement: String
+        complement1: String
+        complement2: String
         city: String
         country: String
         zipCode: String
         photo: String
-        avatar: String
     ): Member!
 }
